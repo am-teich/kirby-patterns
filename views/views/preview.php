@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <title><?= $pattern->name() ?></title>
   <?= css($css) ?>
-  <?php if($background): ?>
+  <? if($background): ?>
   <style>
     html, body {
       background: <?= $background ?> !important;
     }
   </style>
-  <?php endif ?>
+  <? endif ?>
 </head>
 <body>
   <?= $html ?>

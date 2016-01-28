@@ -7,19 +7,19 @@
 </head>
 <body>
   <header class="topbar bar">
-    <h1><?= Html::a($lab->url(), $lab->title()) ?></h1>
+    <h1><?= html::a($lab->url(), $lab->title()) ?></h1>
   </header>
   <nav class="menu">
     <?= $menu ?>
   </nav>
   <?= $content ?>
-  <?php if(!empty($modal)): ?>
+  <? if(!empty($modal)): ?>
   <div class="modal">
     <div class="modal-content">
       <?= $modal ?>
     </div>
   </div>
-  <?php endif ?>
+  <? endif ?>
   <?= js($lab->theme()->js()) ?>
 </body>
 </html>

@@ -2,28 +2,19 @@
 
 With Kirby Patterns you can build your site with clean reusable modules, while the plugin creates a living styleguide for you automatically. 
 
-## Video Demo
-
-<https://vimeo.com/153132557>
-
-## Screenshots
-
-<https://gist.github.com/bastianallgeier/27f604fc838a266be482#gistcomment-1677662>
-
 ## Installation
 
-0. Install Kirby. I'd recommend [Kirby's Plainkit](https://github.com/getkirby/plainkit)
-1. [Download Kirby Patterns](https://github.com/getkirby/patterns/archive/master.zip) from Github
+1. [Download Kirby Patterns](#) from Github
 2. Copy the patterns folder into `/site/plugins` (Create the plugins folder if it does not exist yet)
-3. Create a new `/site/patterns` folder and start building your patterns in there.
+3. Create a new /site/patterns folder and start building your patterns in there.
 
 ## Patterns readme.md
 
-As on of your first steps after the installation, you should put a `readme.md` in `/site/patterns` This will automatically be used by the Patterns interface to provide a nice little introduction page for your library.
+As on of your first steps after the installation, you should put a readme.md in `/site/patterns` This will automatically be used by the Patterns interface to provide a nice little introduction page for your library.
 
 ## Options
 
-The following options can be set in your `/site/config/config.php`
+The following options can be set in your Kirby config file. 
 
 ```php
 c::set('patterns.title', 'Patterns');
@@ -75,17 +66,6 @@ c::set('patterns.preview.js', ['assets/js/jquery.js', 'assets/js/patterns.js']);
 
 You can use this option to set the default background color for the pattern preview screen. Any valid CSS value can be used. By default no specific color value is being set. A pattern can overwrite this with the `background` option (see further down)
 
-### patterns.preview.mode
-
-The default mode to display a pattern is the iframe preview, if a html template file exists. This gives the best impression how the pattern will look on your site. But you can change this to `php` or `html` instead to switch to the particular tab by default. 
-
-Valid values: 
-
-- preview (default)
-- php
-- html
-
-
 
 ## Creating a pattern
 
@@ -114,16 +94,6 @@ A pattern config file must return an associative PHP array:
 
 return [
   // your pattern config goes here
-];
-```
-
-### title
-
-The default title for a pattern is the name of the pattern folder. You can change this in the config though to make it more human readable. 
-
-```php
-return [
-  'title' => 'Pattern Title'
 ];
 ```
 
@@ -175,7 +145,7 @@ return [
     return [
       'title' => page('blog/article-xyz')->title(),
       'text'  => 'Lorem ipsum…'
-    ];
+    ]
 
   }
 ];
@@ -187,7 +157,7 @@ return [
 To use a pattern in your Kirby templates or snippets you can use the new `pattern()` method, which will be available as soon as the plugin is being installed. 
 
 ```php
-<?php pattern('header/logo') ?>
+<? pattern('header/logo') ?>
 ```
 
 ### Passing options to the pattern
@@ -195,7 +165,7 @@ To use a pattern in your Kirby templates or snippets you can use the new `patter
 You can pass additional variables and options to the pattern and overwrite its defaults that way. 
 
 ```php
-<?php pattern('header/logo', ['class' 'logo logo-on-black']) ?>
+<? pattern('header/logo', ['class' 'logo logo-on-black']) ?>
 ```
 
 ## Nesting patterns
@@ -277,10 +247,6 @@ npm install --save-dev gulp-image
 Afterwards you can run `gulp` in order to build the assets or `gulp watch` to work on your patterns and convert the assets on the fly.
 
 I am by no means the best frontend dev out there, so I'm sure you will find a smarter way to setup your build process with grunt, gulp or npm anyway. 
-
-## Customizing the design of the Patterns interface
-
-The dark default theme might not be for everyone, but it's very easy to load your own stylesheet and even js to customize the interface. The app is looking for an `/assets/patterns/index.css` and a `/assets/patterns/index.js` file. If not provided it will load the default theme. So by adding those files you can overwrite any styles you want. 
 
 ## Requirements
 

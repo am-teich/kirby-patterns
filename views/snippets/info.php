@@ -1,7 +1,7 @@
 <div class="info">
   <ul class="nav">
-    <?php foreach($pattern->files() as $file): ?>
-    <li><?= Html::a($pattern->url() . '/' . $file->filename(), $file->filename(), ['class' => ($currentFile && $currentFile->filename() == $file->filename()) ? 'active' : '']) ?></li>
-    <?php endforeach ?>
+    <? foreach($pattern->files() as $f): ?>
+    <li><?= html::a($pattern->url() . '/' . $f->filename(), $f->filename(), ['class' => ($file and $f->filename() == $file->filename()) ? 'active' : '']) ?></li>
+    <? endforeach ?>
   </ul>
 </div>
