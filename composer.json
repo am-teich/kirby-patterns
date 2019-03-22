@@ -1,0 +1,36 @@
+{
+    "name": "crealistiques/patterns",
+    "type": "kirby-plugin",
+    "version": "3.0.0",
+    "license": "MIT",
+    "description": "Kirby 3 Patterns Plugin",
+    "authors": [
+        {
+            "name": "Bastian Allgeier",
+            "email": "bastian@getkirby.com"
+        },
+        {
+            "name": "Steffen Wargalla",
+            "email": "sw@crealistiques.de"
+        }
+    ],
+    "keywords": [
+        "kirby3",
+        "kirby3-cms",
+        "kirby3-plugin",
+        "patterns"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Kirby\\Patterns\\": "classes/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "require": {
+        "php": ">=7.1.0",
+        "getkirby/composer-installer": "^1.1"
+    }
+}
