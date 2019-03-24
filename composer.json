@@ -18,11 +18,15 @@
         "kirby3",
         "kirby3-cms",
         "kirby3-plugin",
-        "patterns"
+        "patterns",
+        "patternlab",
+        "style guide",
+        "branding",
+        "templates"
     ],
     "autoload": {
         "psr-4": {
-            "Kirby\\Patterns\\": "classes/"
+            "Kirby\\Patterns\\": "src/"
         }
     },
     "config": {

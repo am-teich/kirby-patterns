@@ -7,7 +7,7 @@
 </head>
 <body>
   <header class="topbar bar">
-    <h1><?= html::a($lab->url(), $lab->title()) ?></h1>
+    <h1><?= Html::a($lab->url(), $lab->title()) ?></h1>
   </header>
   <nav class="menu">
     <?= $menu ?>

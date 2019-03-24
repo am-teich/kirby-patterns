@@ -1,4 +1,8 @@
-# Kirby Patterns
+# Kirby Patterns for Kirby 3
+
+This is a forked and updated version of the good old Kirby 2 Patterns Plugin.
+
+## What does it do?
 
 With Kirby Patterns you can build your site with clean reusable modules, while the plugin creates a living styleguide for you automatically. 
 
@@ -26,14 +30,22 @@ As on of your first steps after the installation, you should put a `readme.md` i
 The following options can be set in your `/site/config/config.php`
 
 ```php
-c::set('patterns.title', 'Patterns');
-c::set('patterns.path', 'patterns');
-c::set('patterns.directory', '/var/www/yoursite.com/site/patterns');
-c::set('patterns.lock', false);
-c::set('patterns.preview.css', 'assets/css/index.css');
-c::set('patterns.preview.js', 'assets/js/index.js');
-c::set('patterns.preview.background', false);
+return [
+    'crealistiques.patterns.lock' => true,
+    'crealistiques.patterns.title' => 'Kirby Pattern Lab',
+    'crealistiques.patterns.path' => 'patterns',
+    'crealistiques.patterns.directory' => '/var/www/yoursite.com/site/patterns',
+    'crealistiques.patterns.error' => 'error',
+    'crealistiques.patterns.preview.mode' => 'preview',
+    'crealistiques.patterns.preview.background' => false,
+    'crealistiques.patterns.preview.css' => 'assets/css/index.css',
+    'crealistiques.patterns.preview.js' => 'assets/js/index.js'
+];
 ```
+
+### patterns.lock
+
+You can lock the Patterns interface, so it will only be accessible by users, who logged into the Kirby Panel first.
 
 ### patterns.title
 
@@ -47,34 +59,6 @@ You can use this option to change the location of the Patterns interface. By def
 
 Set the full path to your patterns directory with this option. By default the patterns directory must be located in `site/patterns`
 
-### patterns.lock
-
-You can lock the Patterns interface, so it will only be accessible by users, who logged into the Kirby Panel first.
-
-### patterns.preview.css 
-
-Use this option to set where the final CSS for your patterns is located. All the specified CSS files will be loaded in the preview screen in order to style your patterns appropriately. By default the Patterns interface is looking for a `/assets/css/index.css` file.
-
-You can load multiple CSS files by passing an array of files: 
-
-```php
-c::set('patterns.preview.css', ['assets/css/main.css', 'assets/css/theme.css']);
-```
-
-### patterns.preview.js
-
-Use this option to set where the final JS for your patterns is located. All the specified JS files will be loaded in the preview screen (in the footer) in order to apply behaviour to your patterns. By default the Patterns interface is looking for a `/assets/js/index.js` file.
-
-You can load multiple JS files by passing an array of files: 
-
-```php
-c::set('patterns.preview.js', ['assets/js/jquery.js', 'assets/js/patterns.js']);
-```
-
-### patterns.preview.background
-
-You can use this option to set the default background color for the pattern preview screen. Any valid CSS value can be used. By default no specific color value is being set. A pattern can overwrite this with the `background` option (see further down)
-
 ### patterns.preview.mode
 
 The default mode to display a pattern is the iframe preview, if a html template file exists. This gives the best impression how the pattern will look on your site. But you can change this to `php` or `html` instead to switch to the particular tab by default. 
@@ -84,6 +68,31 @@ Valid values:
 - preview (default)
 - php
 - html
+
+### patterns.preview.background
+
+You can use this option to set the default background color for the pattern preview screen. Any valid CSS value can be used. By default no specific color value is being set. A pattern can overwrite this with the `background` option (see further down)
+
+### patterns.preview.css 
+
+Use this option to set where the final CSS for your patterns is located. All the specified CSS files will be loaded in the preview screen in order to style your patterns appropriately. By default the Patterns interface is looking for a `/assets/css/index.css` file.
+
+You can load multiple CSS files by passing an array of files: 
+
+```php
+'crealistiques.patterns.preview.css', ['assets/css/main.css', 'assets/css/theme.css']);
+```
+
+### patterns.preview.js
+
+Use this option to set where the final JS for your patterns is located. All the specified JS files will be loaded in the preview screen (in the footer) in order to apply behaviour to your patterns. By default the Patterns interface is looking for a `/assets/js/index.js` file.
+
+You can load multiple JS files by passing an array of files: 
+
+```php
+'crealistiques.patterns.preview.js', ['assets/js/jquery.js', 'assets/js/patterns.js']);
+```
+
 
 
 
@@ -284,16 +293,19 @@ The dark default theme might not be for everyone, but it's very easy to load you
 
 ## Requirements
 
-- Kirby 2.2.3+
-- PHP 5.4+
+- Kirby 3.0.0+
+- PHP 7.1+
 
 ## License 
 
 <http://www.opensource.org/licenses/mit-license.php>
 
-## Author
+## Authors
 
 Bastian Allgeier   
 <bastian@getkirby.com>  
 <http://getkirby.com>  
 <http://twitter.com/getkirby>
+
+Steffen Wargalla   
+<sw@crealistiques.de>  
