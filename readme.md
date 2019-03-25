@@ -302,10 +302,13 @@ The dark default theme might not be for everyone, but it's very easy to load you
 
 ## Authors
 
+### Kirby 2 version
+
 Bastian Allgeier   
 <bastian@getkirby.com>  
 <http://getkirby.com>  
 <http://twitter.com/getkirby>
 
+### Kirby 3 compatibility
 Steffen Wargalla   
 <sw@crealistiques.de>  
