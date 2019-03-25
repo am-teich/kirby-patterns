@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Kirby\\Patterns\\' => array($baseDir . '/src'),
+    'Kirby\\Patterns\\' => array($baseDir . '/src/classes'),
 );

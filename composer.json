@@ -26,7 +26,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Kirby\\Patterns\\": "src/"
+            "Kirby\\Patterns\\": "src/classes/"
         }
     },
     "config": {

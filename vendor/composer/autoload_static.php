@@ -16,13 +16,13 @@ class ComposerStaticInitffe8a21ff6125260270ace5becf599bd
     public static $prefixDirsPsr4 = array (
         'Kirby\\Patterns\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/src/classes',
         ),
     );
 
     public static $classMap = array (
-        'Kirby\\Patterns\\Lab' => __DIR__ . '/../..' . '/src/lab.php',
-        'Kirby\\Patterns\\Pattern' => __DIR__ . '/../..' . '/src/pattern.php',
+        'Kirby\\Patterns\\Lab' => __DIR__ . '/../..' . '/src/classes/lab.php',
+        'Kirby\\Patterns\\Pattern' => __DIR__ . '/../..' . '/src/classes/pattern.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
