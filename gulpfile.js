@@ -1,43 +1,52 @@
-var gulp   = require('gulp');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');
-var cssmin = require('gulp-cssmin');
+const {src, dest, watch, parallel} = require('gulp');
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
+const cssmin = require('gulp-clean-css');
 
-gulp.task('js', function() {
 
-  return gulp.src([
-      'assets/src/js/prism.js',
-      'assets/src/js/index.js'
-    ]) 
-    .pipe(concat('index.js')) 
-    .pipe(gulp.dest('assets/dist'))
-    .pipe(rename('index.min.js'))
-    .pipe(uglify()) 
-    .pipe(gulp.dest('assets/dist'));
-
-});
-
-gulp.task('css', function() {
-
-  return gulp.src([
-      'assets/src/css/prism.css',
-      'assets/src/css/index.css',
-    ])  
-    .pipe(concat('index.css')) 
-    .pipe(gulp.dest('assets/dist'))
+function css() {
+  return src([
+    'assets/src/css/prism.css',
+    'assets/src/css/index.css',
+  ])
+    .pipe(concat('index.css'))
+    .pipe(dest('assets/dist'))
+    .pipe(cssmin())
     .pipe(rename('index.min.css'))
-    .pipe(cssmin()) 
-    .pipe(gulp.dest('assets/dist'));    
+    .pipe(dest('assets/dist'));
+}
 
-});
 
-gulp.task('watch', function() {
-  gulp.watch('assets/src/**/*.css', ['css']);
-  gulp.watch('assets/src/**/*.js', ['js']);
-});
+function js() {
+  return src([
+    'assets/src/js/prism.js',
+    'assets/src/js/index.js',
+  ])
+    .pipe(concat('index.js'))
+    .pipe(dest('assets/dist'))
+    .pipe(uglify())
+    .pipe(rename('index.min.js'))
+    .pipe(dest('assets/dist'));
+}
 
-gulp.task('default', [
-  'css', 
-  'js'
-]);
+
+function watchScripts() {
+  watch('assets/src/**/*.js', js);
+}
+
+function watchStyles() {
+  watch('assets/src/**/*.css', css);
+}
+
+
+module.exports = {
+  default: parallel(
+    css,
+    js
+  ),
+  watch: parallel(
+    watchStyles,
+    watchScripts
+  ),
+};
