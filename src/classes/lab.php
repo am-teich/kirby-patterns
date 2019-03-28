@@ -56,7 +56,7 @@ class Lab
     public function view($name, $data = [])
     {
         $data = array_merge($this->data(), (array)$data);
-        return tpl::load(dirname(__DIR__) . '/' . 'views' . '/' . $name . '.php', $data);
+        return tpl::load(dirname(__DIR__) . '/../' . 'views' . '/' . $name . '.php', $data);
     }
 
     public function data()
@@ -145,7 +145,7 @@ class Lab
                     }
 
                     // build the root for the file
-                    $file = dirname(__DIR__) . '/' . 'assets/dist/' . $file;
+                    $file = dirname(__DIR__) . '/../' . 'assets/dist/' . $file;
                     return new Response(f::read($file), $mime);
 
                 }
