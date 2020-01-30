@@ -13,6 +13,7 @@ use Kirby\Toolkit\Obj;
 use Kirby\Http\Response;
 use Kirby\Http\Router;
 use Kirby\Toolkit\Tpl;
+use Htmlawed;
 
 class Lab
 {
@@ -376,7 +377,7 @@ class Lab
                 $code = $object->read();
                 $lang = a::get($langs, $object->extension(), 'markup');
             } else if (is_a($object, 'Kirby\\Patterns\\Pattern')) {
-                $code = htmlawed($object->render(), ['tidy' => 1]);
+                $code = Htmlawed::filter($object->render(), ['tidy' => 1]);
                 $lang = 'php';
             } else if (is_string($object)) {
                 $code = $object;

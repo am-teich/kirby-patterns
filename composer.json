@@ -1,7 +1,7 @@
 {
     "name": "mgfagency/kirby-patterns",
     "type": "kirby-plugin",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "license": "MIT",
     "description": "Kirby 3 Patterns Plugin",
     "authors": [
@@ -39,6 +39,7 @@
     },
     "require": {
         "php": ">=7.1.0",
-        "getkirby/composer-installer": "^1.1"
+        "getkirby/composer-installer": "^1.1",
+        "vanilla/htmlawed": "^2.2"
     }
 }

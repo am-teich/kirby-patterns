@@ -26,6 +26,7 @@ class ComposerStaticInitffe8a21ff6125260270ace5becf599bd
     );
 
     public static $classMap = array (
+        'Htmlawed' => __DIR__ . '/..' . '/vanilla/htmlawed/src/Htmlawed.php',
         'Kirby\\ComposerInstaller\\CmsInstaller' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/CmsInstaller.php',
         'Kirby\\ComposerInstaller\\Installer' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/Installer.php',
         'Kirby\\ComposerInstaller\\Plugin' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/Plugin.php',

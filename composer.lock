@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7bfe7f312dfa58b509cfd5c13195f34a",
+    "content-hash": "47ff3afca80887b5f8aaaccf1f31d95d",
     "packages": [
         {
             "name": "getkirby/composer-installer",
@@ -43,6 +43,45 @@
             "description": "Kirby's custom Composer installer for the Kirby CMS and for Kirby plugins",
             "homepage": "https://getkirby.com",
             "time": "2019-02-11T20:27:36+00:00"
+        },
+        {
+            "name": "vanilla/htmlawed",
+            "version": "v2.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vanilla/htmlawed.git",
+                "reference": "b1fc7b3990796112387c08a132f85b7333022ec2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vanilla/htmlawed/zipball/b1fc7b3990796112387c08a132f85b7333022ec2",
+                "reference": "b1fc7b3990796112387c08a132f85b7333022ec2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "tburry/pquery": "~1.0.1"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/Htmlawed.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Todd Burry",
+                    "email": "todd@vanillaforums.com"
+                }
+            ],
+            "description": "A composer wrapper for the htmLawed library to purify & filter HTML. Tested with PHPUnit and PhantomJS!",
+            "time": "2019-10-16T15:36:02+00:00"
         }
     ],
     "packages-dev": [],

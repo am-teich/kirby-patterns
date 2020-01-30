@@ -3,7 +3,6 @@
 use Kirby\Patterns\Lab;
 
 @include_once __DIR__ . '/vendor/autoload.php';
-@require_once(__DIR__ . '/vendor/htmlawed/htmlawed.php');
 @require_once(__DIR__ . '/src/helpers.php');
 
 
