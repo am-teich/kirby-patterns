@@ -1,6 +1,6 @@
-# Kirby Patterns for Kirby 3
+# Patterns Plugin for Kirby 3 with Twig Plugin
 
-This is a forked and updated version of the good old Kirby 2 Patterns Plugin.
+This is a forked and updated version of the Kirby 3 Patterns Plugin of Steffen Wargalla.
 
 ## What does it do?
 
@@ -61,12 +61,12 @@ Set the full path to your patterns directory with this option. By default the pa
 
 ### patterns.preview.mode
 
-The default mode to display a pattern is the iframe preview, if a html template file exists. This gives the best impression how the pattern will look on your site. But you can change this to `php` or `html` instead to switch to the particular tab by default. 
+The default mode to display a pattern is the iframe preview, if a html template file exists. This gives the best impression how the pattern will look on your site. But you can change this to `twig` or `html` instead to switch to the particular tab by default. 
 
 Valid values: 
 
 - preview (default)
-- php
+- twig
 - html
 
 ### patterns.preview.background
@@ -108,13 +108,13 @@ You should provide a markdown file in order to add documentation for your patter
 
 ## Pattern template
 
-Patterns don't necessarily need to have a template file, but if you want to use them in your templates or snippets, you should create a file called `{patternname}.html.php` in the pattern folder. 
+Patterns don't necessarily need to have a template file, but if you want to use them in your templates or snippets, you should create a file called `{patternname}.twig` in the pattern folder. 
 
 In your pattern template you can use all the methods and functions from Kirby's APIs. You have full access to the `$site`, `$pages` and `$page` variable and everything else mentioned in the cheat sheet. 
 
 ## Pattern configuration
 
-You can add an optional `{patternname}.config.php` file to your pattern to further set it up.
+You can add an optional `config.php` file to your pattern to further set it up.
 
 A pattern config file must return an associative PHP array: 
 
@@ -295,6 +295,7 @@ The dark default theme might not be for everyone, but it's very easy to load you
 
 - Kirby 3.0.0+
 - PHP 7.1+
+- Kirby-Twig Plugin - <https://github.com/mgfagency/kirby-twig>
 
 ## License 
 
@@ -312,3 +313,7 @@ Bastian Allgeier
 ### Kirby 3 compatibility
 Steffen Wargalla   
 <sw@crealistiques.de>  
+
+### Twig compatibility
+Christian Zehetner
+<https://mgf.at>
