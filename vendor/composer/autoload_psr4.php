@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Kirby\\Patterns\\' => array($baseDir . '/src/classes'),
+    'Kirby\\' => array($vendorDir . '/getkirby/composer-installer/src'),
 );

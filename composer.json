@@ -1,7 +1,7 @@
 {
-    "name": "mgfagency/patterns",
+    "name": "mgfagency/kirby-patterns",
     "type": "kirby-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "description": "Kirby 3 Patterns Plugin",
     "authors": [
@@ -35,8 +35,7 @@
         }
     },
     "config": {
-        "optimize-autoloader": true,
-        "sort-packages": true
+        "optimize-autoloader": true
     },
     "require": {
         "php": ">=7.1.0",

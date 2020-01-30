@@ -10,6 +10,7 @@ class ComposerStaticInitffe8a21ff6125260270ace5becf599bd
         'K' => 
         array (
             'Kirby\\Patterns\\' => 15,
+            'Kirby\\' => 6,
         ),
     );
 
@@ -18,9 +19,17 @@ class ComposerStaticInitffe8a21ff6125260270ace5becf599bd
         array (
             0 => __DIR__ . '/../..' . '/src/classes',
         ),
+        'Kirby\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/getkirby/composer-installer/src',
+        ),
     );
 
     public static $classMap = array (
+        'Kirby\\ComposerInstaller\\CmsInstaller' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/CmsInstaller.php',
+        'Kirby\\ComposerInstaller\\Installer' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/Installer.php',
+        'Kirby\\ComposerInstaller\\Plugin' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/Plugin.php',
+        'Kirby\\ComposerInstaller\\PluginInstaller' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/PluginInstaller.php',
         'Kirby\\Patterns\\Lab' => __DIR__ . '/../..' . '/src/classes/lab.php',
         'Kirby\\Patterns\\Pattern' => __DIR__ . '/../..' . '/src/classes/pattern.php',
     );
