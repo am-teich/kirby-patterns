@@ -8,6 +8,7 @@ const cssmin = require('gulp-clean-css');
 function css() {
   return src([
     'assets/src/css/prism.css',
+    'assets/src/css/ish.css',
     'assets/src/css/index.css',
   ])
     .pipe(concat('index.css'))
@@ -20,7 +21,10 @@ function css() {
 
 function js() {
   return src([
+    'assets/src/js/jquery.min.js',
     'assets/src/js/prism.js',
+    // 'assets/src/js/url-handler.js',
+    'assets/src/js/ish.js',
     'assets/src/js/index.js',
   ])
     .pipe(concat('index.js'))

@@ -17,7 +17,7 @@ With Kirby Patterns you can build your site with clean reusable modules, while t
 ## Installation
 
 0. Install Kirby. I'd recommend [Kirby's Plainkit](https://github.com/getkirby/plainkit)
-1. [Download Kirby Patterns](https://github.com/crealistiques/patterns-plugin/archive/master.zip) from Github
+1. [Download Kirby Patterns](https://github.com/mgfagency/patterns-plugin/archive/master.zip) from Github
 2. Copy the patterns folder into `/site/plugins` (Create the plugins folder if it does not exist yet)
 3. Create a new `/site/patterns` folder and start building your patterns in there.
 
@@ -31,15 +31,15 @@ The following options can be set in your `/site/config/config.php`
 
 ```php
 return [
-    'crealistiques.patterns.lock' => true,
-    'crealistiques.patterns.title' => 'Kirby Pattern Lab',
-    'crealistiques.patterns.path' => 'patterns',
-    'crealistiques.patterns.directory' => '/var/www/yoursite.com/site/patterns',
-    'crealistiques.patterns.error' => 'error',
-    'crealistiques.patterns.preview.mode' => 'preview',
-    'crealistiques.patterns.preview.background' => false,
-    'crealistiques.patterns.preview.css' => 'assets/css/index.css',
-    'crealistiques.patterns.preview.js' => 'assets/js/index.js'
+    'mgfagency.patterns.lock' => true,
+    'mgfagency.patterns.title' => 'Kirby Pattern Lab',
+    'mgfagency.patterns.path' => 'patterns',
+    'mgfagency.patterns.directory' => '/var/www/yoursite.com/site/patterns',
+    'mgfagency.patterns.error' => 'error',
+    'mgfagency.patterns.preview.mode' => 'preview',
+    'mgfagency.patterns.preview.background' => false,
+    'mgfagency.patterns.preview.css' => 'assets/css/index.css',
+    'mgfagency.patterns.preview.js' => 'assets/js/index.js'
 ];
 ```
 
@@ -80,7 +80,7 @@ Use this option to set where the final CSS for your patterns is located. All the
 You can load multiple CSS files by passing an array of files: 
 
 ```php
-'crealistiques.patterns.preview.css', ['assets/css/main.css', 'assets/css/theme.css']);
+'mgfagency.patterns.preview.css', ['assets/css/main.css', 'assets/css/theme.css']);
 ```
 
 ### patterns.preview.js
@@ -90,7 +90,7 @@ Use this option to set where the final JS for your patterns is located. All the 
 You can load multiple JS files by passing an array of files: 
 
 ```php
-'crealistiques.patterns.preview.js', ['assets/js/jquery.js', 'assets/js/patterns.js']);
+'mgfagency.patterns.preview.js', ['assets/js/jquery.js', 'assets/js/patterns.js']);
 ```
 
 
@@ -312,7 +312,7 @@ Bastian Allgeier
 
 ### Kirby 3 compatibility
 Steffen Wargalla   
-<sw@crealistiques.de>  
+<sw@mgfagency.de>  
 
 ### Twig compatibility
 Christian Zehetner

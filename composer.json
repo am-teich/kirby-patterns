@@ -1,7 +1,7 @@
 {
-    "name": "crealistiques/patterns",
+    "name": "mgfagency/patterns",
     "type": "kirby-plugin",
-    "version": "3.0.0",
+    "version": "1.0.0",
     "license": "MIT",
     "description": "Kirby 3 Patterns Plugin",
     "authors": [
@@ -11,7 +11,11 @@
         },
         {
             "name": "Steffen Wargalla",
-            "email": "sw@crealistiques.de"
+            "email": "sw@mgfagency.de"
+        },
+        {
+            "name": "Christian Zehetner",
+            "email": "christian@mgf.at"
         }
     ],
     "keywords": [
@@ -22,7 +26,8 @@
         "patternlab",
         "style guide",
         "branding",
-        "templates"
+        "templates",
+        "twig"
     ],
     "autoload": {
         "psr-4": {

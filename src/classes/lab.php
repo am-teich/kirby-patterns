@@ -29,9 +29,9 @@ class Lab
     public function __construct()
     {
         $this->kirby = kirby();
-        $this->path = option('crealistiques.patterns.path', 'patterns');
-        $this->title = option('crealistiques.patterns.title', 'Patterns');
-        $this->root = option('crealistiques.patterns.directory', $this->kirby->roots()->site() . '/patterns');
+        $this->path = option('mgfagency.patterns.path', 'patterns');
+        $this->title = option('mgfagency.patterns.title', 'Patterns');
+        $this->root = option('mgfagency.patterns.directory', $this->kirby->roots()->site() . '/patterns');
 
         $lab = $this;
         static::$instance = $this;
@@ -94,8 +94,8 @@ class Lab
 
     public function run($path = '/')
     {
-        if (option('crealistiques.patterns.lock') && !$this->kirby->user()) {
-            go(option('crealistiques.patterns.error'));
+        if (option('mgfagency.patterns.lock') && !$this->kirby->user()) {
+            go(option('mgfagency.patterns.error'));
         }
 
         $router = new Router([
@@ -168,9 +168,9 @@ class Lab
                     return Lab::instance()->view('views/preview', [
                         'pattern' => $pattern,
                         'html' => $html,
-                        'background' => a::get($config, 'background', option('crealistiques.patterns.preview.background')),
-                        'css' => option('crealistiques.patterns.preview.css'),
-                        'js' => option('crealistiques.patterns.preview.js')
+                        'background' => a::get($config, 'background', option('mgfagency.patterns.preview.background')),
+                        'css' => option('mgfagency.patterns.preview.css'),
+                        'js' => option('mgfagency.patterns.preview.js')
                     ]);
 
                 }
@@ -209,7 +209,7 @@ class Lab
                             }
                         }
 
-                    } else if ($file = $pattern->files()->get($pattern->name() . '.html.php')) {
+                    } else if ($file = $pattern->files()->get($pattern->name() . '.twig')) {
                         go($pattern->url() . '/' . $file->filename());
                     } else if ($file = $pattern->files()->first()) {
                         go($pattern->url() . '/' . $file->filename());
@@ -292,14 +292,14 @@ class Lab
         if (get('raw') == 'true') {
             $this->raw($pattern, $file);
         }
+        else if ($file->filename() == $pattern->name() . '.html.php' or 
+                 $file->filename() == $pattern->name() . '.twig') {
 
-        if ($file->filename() == $pattern->name() . '.html.php') {
-
-            $views = ['preview', 'html', 'htmlpreview', 'php'];
+            $views = ['preview', 'htmlpreview', 'twig'];
             $snippet = 'html';
 
             // pass the mode to the template
-            $data['view'] = in_array(get('view'), $views) ? get('view') : option('crealistiques.patterns.preview.mode', 'preview');
+            $data['view'] = in_array(get('view'), $views) ? get('view') : option('mgfagency.patterns.preview.mode', 'preview');
 
             switch ($data['view']) {
                 case 'preview':
@@ -311,11 +311,8 @@ class Lab
                         $data['content'] = $this->error($e);
                     }
                     break;
-                case 'php':
+                case 'twig':
                     $data['content'] = $this->codeblock($file);
-                    break;
-                case 'html':
-                    $data['content'] = $this->codeblock($pattern);
                     break;
                 case 'htmlpreview':
                     $data['content'] = $this->codeblock($pattern);
@@ -336,7 +333,7 @@ class Lab
         } else {
 
             $ext = $file->extension();
-            $code = ['php', 'html', 'js', 'css', 'scss', 'sass', 'less', 'json', 'txt'];
+            $code = ['twig', 'html', 'js', 'css', 'scss', 'sass', 'less', 'json', 'txt'];
 
             if (in_array($ext, $code)) {
                 $snippet = 'code';
@@ -365,7 +362,7 @@ class Lab
     {
         $langs = [
             'css' => 'css',
-            'php' => 'php',
+            'twig' => 'twig',
             'js' => 'js',
             'scss' => 'sass',
             'sass' => 'sass',

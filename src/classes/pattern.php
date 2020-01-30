@@ -36,6 +36,10 @@ class Pattern
         return $this->root . '/' . $this->name . '.' . $ext;
     }
 
+    public function relativeFile ($ext) {
+        return $this->path . '/' . $this->name . '.' . $ext;
+    }
+
     public function defaults()
     {
         return (array)a::get($this->config(), 'defaults', []);
@@ -84,7 +88,12 @@ class Pattern
 
     public function template()
     {
-        return tpl::load($this->file('html.php'), $this->data());
+        return \mgfagency\Twig\Plugin::render($this->relativeFile('twig'), $this->data());
+        // return tpl::load($this->file('html.php'), $this->data());
+    }
+
+    public function patternuipath() {
+      return Lab::instance()->path . '/' . $this->path();
     }
 
     public function render()
@@ -117,7 +126,10 @@ class Pattern
             $url = $this->url() . '/' . $file . '?raw=true';
             //$media = new \Kirby\Toolkit\File($this->root . '/' . $file, $url);
             $media = new \Kirby\Toolkit\File($this->root . '/' . $file);
-            $files->append($media->filename(), $media);
+            
+            if ($media->filename() !== 'config.php') {
+              $files->append($media->filename(), $media);
+            }
         }
 
         return $files;
@@ -153,7 +165,7 @@ class Pattern
 
         if (!is_null($this->config)) return $this->config;
 
-        $config = $this->file('config.php');
+        $config = $this->root . '/' . 'config.php';
 
         if (file_exists($config)) {
             return $this->config = (array)require($config);

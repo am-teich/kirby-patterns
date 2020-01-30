@@ -7,18 +7,22 @@ use Kirby\Patterns\Lab;
 @require_once(__DIR__ . '/src/helpers.php');
 
 
-Kirby::plugin('crealistiques/patterns', [
-    'options' => [
-        'enable' => true,
-        'lock' => true,
-        'error' => 'error',
-        'path' => 'patterns',
-        'title' => 'Kirby Pattern Lab',
-        'directory' => kirby()->roots()->site() . '/patterns',
-        'preview.mode' => 'preview',
-        'preview.background' => '#21252b',
-        'preview.css' => 'assets/css/index.css',
-        'preview.js' => 'assets/js/index.js'
-    ],
-    'routes' => function() { return Lab::routes(); }
+Kirby::plugin('mgfagency/patterns', [
+  'options' => [
+    'enable' => true,
+    'lock' => true,
+    'error' => 'error',
+    'path' => 'patterns',
+    'title' => 'Pattern Lab',
+    'includepath' => '',
+    'directory' => kirby()->roots()->site() . '/patterns',
+    'preview.mode' => 'preview',
+    'preview.background' => '#fff',
+    'preview.css' => 'assets/index.css',
+    'preview.js' => 'assets/index.js'
+  ],
+  'routes' => function() { return Lab::routes(); },
+  'twigcomponents' => function () {
+    return option('mgfagency.patterns.directory');
+  },
 ]);

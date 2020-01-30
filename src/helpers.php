@@ -1,9 +1,15 @@
 <?php
 
-function pattern($path, $data = [], $return = false) {
+function pattern($path, $data = [], $return = true) {
+  if (option('mgfagency.patterns.includepath') != "") {
+    $path = option('mgfagency.patterns.includepath') . '/' . $path;
+  }
+  
+  $output = new Kirby\Patterns\Pattern($path, $data); 
+
   if($return === true) {
-    return new Kirby\Patterns\Pattern($path, $data);
+    return $output;
   } else {
-    echo new Kirby\Patterns\Pattern($path, $data);     
+    echo $output;
   }
 }
