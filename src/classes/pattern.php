@@ -50,6 +50,11 @@ class Pattern
         return $this->lab->url() . '/' . $this->path;
     }
 
+    public function isRawPreview()
+    {
+        return a::get($this->config(), 'rawpreview', false);
+    }
+
     public function isHidden()
     {
         return a::get($this->config(), 'hide', false);
@@ -93,7 +98,7 @@ class Pattern
     }
 
     public function patternuipath() {
-      return Lab::instance()->path . '/' . $this->path();
+      return url(Lab::instance()->path . '/' . $this->path());
     }
 
     public function render()

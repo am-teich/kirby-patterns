@@ -166,13 +166,18 @@ class Lab
                         $html = '';
                     }
 
-                    return Lab::instance()->view('views/preview', [
-                        'pattern' => $pattern,
-                        'html' => $html,
-                        'background' => a::get($config, 'background', option('mgfagency.patterns.preview.background')),
-                        'css' => option('mgfagency.patterns.preview.css'),
-                        'js' => option('mgfagency.patterns.preview.js')
-                    ]);
+                    if ($pattern->isRawPreview()) {
+                      return $html;
+                    }
+                    else {
+                      return Lab::instance()->view('views/preview', [
+                          'pattern' => $pattern,
+                          'html' => $html,
+                          'background' => a::get($config, 'background', option('mgfagency.patterns.preview.background')),
+                          'css' => option('mgfagency.patterns.preview.css'),
+                          'js' => option('mgfagency.patterns.preview.js')
+                      ]);
+                    }
 
                 }
             ],
