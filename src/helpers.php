@@ -1,11 +1,18 @@
 <?php
 
 function pattern($path, $data = [], $return = true) {
-  if (option('mgfagency.patterns.includepath') != "") {
-    $path = option('mgfagency.patterns.includepath') . '/' . $path;
-  }
   
-  $output = new Kirby\Patterns\Pattern($path, $data); 
+  $output = null;
+  foreach (option('mgfagency.patterns.includepaths', []) as $subpath) {
+    $pattern = new Kirby\Patterns\Pattern($subpath . '/' . $path, $data);
+    if ($pattern->exists()) {
+      $output = $pattern;
+      break;
+    }
+  }
+  if ($output == null) {
+    throw new Exception("Pattern $path not found");
+  }
 
   if($return === true) {
     return $output;

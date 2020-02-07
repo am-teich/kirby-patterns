@@ -13,7 +13,7 @@ Kirby::plugin('mgfagency/patterns', [
     'error' => 'error',
     'path' => 'patterns',
     'title' => 'Pattern Lab',
-    'includepath' => '',
+    'includepaths' => [],
     'directory' => kirby()->roots()->site() . '/patterns',
     'preview.mode' => 'preview',
     'preview.background' => '#fff',
