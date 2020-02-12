@@ -14,10 +14,8 @@
   </style>
   <?php endif ?>
 </head>
-<body>
-  <main>
+<body <?= $bodyattributes ?>>
   <?= $html ?>
-  </main>
   <?= js($js) ?>
 </body>
 </html>
