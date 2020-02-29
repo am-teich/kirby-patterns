@@ -5,7 +5,7 @@
   <title><?= $pattern->name() ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Pattern description">
-  <?= css($css) ?>
+  <?= Bnomei\Fingerprint::css($css) ?>
   <?php if($background): ?>
   <style>
     html, body {
@@ -16,6 +16,6 @@
 </head>
 <body <?= $bodyattributes ?>>
   <?= $html ?>
-  <?= js($js) ?>
+  <?= Bnomei\Fingerprint::js($js) ?>
 </body>
 </html>
