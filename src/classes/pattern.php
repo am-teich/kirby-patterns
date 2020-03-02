@@ -22,6 +22,13 @@ class Pattern
     public $root;
     public $config = null;
 
+    public static $states = [
+      'inprogress' => 'in Arbeit',
+      'inreview' => 'im Review für den Kunden',
+      'complete' => 'Abgeschlossen',
+      'rejected' => 'Abgelehnt',
+    ];
+
     public function __construct($path = '', $data = [])
     {
         $this->lab = Lab::instance();
@@ -58,6 +65,21 @@ class Pattern
     public function isHidden()
     {
         return a::get($this->config(), 'hide', false);
+    }
+
+    public function status()
+    {
+        return a::get($this->config(), 'status', false);
+    }
+
+    public function statusTitle()
+    {
+        if (array_key_exists($this->status(), static::$states))  {
+          return static::$states[$this->status()];
+        }
+        else {
+          return '';
+        }
     }
 
     public function data()

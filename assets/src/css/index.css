@@ -60,7 +60,9 @@ li {
 }
 
 .nav a {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: .25rem 1rem;
   color: #9da5b4;
 }
@@ -68,6 +70,20 @@ li {
   background: #31363f;
   color: #eee;
 }
+
+.patternstatus {
+  border-radius: 50%;
+  background-color: gray;
+  width: 8px;
+  height: 8px;
+  margin: 2px;
+}
+
+  .patternstatus--inprogress { background-color: gray; }
+  .patternstatus--inreview { background-color: orange; }
+  .patternstatus--complete { background-color: #00ff00; }
+  .patternstatus--rejected { background-color: #bb0000; }
+
 
 
 .menu {

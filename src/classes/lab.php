@@ -269,7 +269,15 @@ class Lab
             if ($pattern->isHidden()) continue;
 
             $html[] = '<li>';
-            $html[] = Html::a($pattern->url(), ['<span>', $pattern->title(), '</span>'], ['class' => $path == $pattern->path() ? 'active' : null]);
+
+            if ($pattern->status()) {
+              $patternstate = '<div title="' . $pattern->statusTitle() . '" class="patternstatus patternstatus--' . $pattern->status() . '"></div>';
+            }
+            else {
+              $patternstate = '';
+            }
+
+            $html[] = Html::a($pattern->url(), ['<span>', $pattern->title(), '</span>', $patternstate], ['class' => $path == $pattern->path() ? 'active' : null]);
 
             if ($pattern->isOpen($path)) {
                 $html[] = $this->menu($pattern->children(), $path);
