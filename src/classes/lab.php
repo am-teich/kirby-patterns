@@ -173,7 +173,7 @@ class Lab
                       return Lab::instance()->view('views/preview', [
                           'pattern' => $pattern,
                           'html' => $html,
-                          'bodyattributes' => option('mgfagency.patterns.preview.bodyattributes', ''),
+                          'bodyattributes' => $pattern->bodyattributes(),
                           'background' => a::get($config, 'background', option('mgfagency.patterns.preview.background')),
                           'css' => option('mgfagency.patterns.preview.css'),
                           'js' => option('mgfagency.patterns.preview.js')

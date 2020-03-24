@@ -14,7 +14,7 @@
   </style>
   <?php endif ?>
 </head>
-<body <?= $bodyattributes ?>>
+<body <?= Html::attr($bodyattributes) ?>>
   <?= $html ?>
   <?= Bnomei\Fingerprint::js($js) ?>
 </body>

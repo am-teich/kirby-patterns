@@ -82,6 +82,11 @@ class Pattern
         }
     }
 
+    public function bodyattributes()
+    {
+        return a::get($this->config(), 'bodyattributes', []);
+    }
+
     public function data()
     {
 
