@@ -17,7 +17,7 @@ With Kirby Patterns you can build your site with clean reusable modules, while t
 ## Installation
 
 0. Install Kirby. I'd recommend [Kirby's Plainkit](https://github.com/getkirby/plainkit)
-1. [Download Kirby Patterns](https://github.com/mgfagency/patterns-plugin/archive/master.zip) from Github
+1. [Download Kirby Patterns](https://github.com/amteich/patterns-plugin/archive/master.zip) from Github
 2. Copy the patterns folder into `/site/plugins` (Create the plugins folder if it does not exist yet)
 3. Create a new `/site/patterns` folder and start building your patterns in there.
 
@@ -31,15 +31,15 @@ The following options can be set in your `/site/config/config.php`
 
 ```php
 return [
-    'mgfagency.patterns.lock' => true,
-    'mgfagency.patterns.title' => 'Kirby Pattern Lab',
-    'mgfagency.patterns.path' => 'patterns',
-    'mgfagency.patterns.directory' => '/var/www/yoursite.com/site/patterns',
-    'mgfagency.patterns.error' => 'error',
-    'mgfagency.patterns.preview.mode' => 'preview',
-    'mgfagency.patterns.preview.background' => false,
-    'mgfagency.patterns.preview.css' => 'assets/css/index.css',
-    'mgfagency.patterns.preview.js' => 'assets/js/index.js'
+    'amteich.patterns.lock' => true,
+    'amteich.patterns.title' => 'Kirby Pattern Lab',
+    'amteich.patterns.path' => 'patterns',
+    'amteich.patterns.directory' => '/var/www/yoursite.com/site/patterns',
+    'amteich.patterns.error' => 'error',
+    'amteich.patterns.preview.mode' => 'preview',
+    'amteich.patterns.preview.background' => false,
+    'amteich.patterns.preview.css' => 'assets/css/index.css',
+    'amteich.patterns.preview.js' => 'assets/js/index.js'
 ];
 ```
 
@@ -80,7 +80,7 @@ Use this option to set where the final CSS for your patterns is located. All the
 You can load multiple CSS files by passing an array of files: 
 
 ```php
-'mgfagency.patterns.preview.css', ['assets/css/main.css', 'assets/css/theme.css']);
+'amteich.patterns.preview.css', ['assets/css/main.css', 'assets/css/theme.css']);
 ```
 
 ### patterns.preview.js
@@ -90,7 +90,7 @@ Use this option to set where the final JS for your patterns is located. All the 
 You can load multiple JS files by passing an array of files: 
 
 ```php
-'mgfagency.patterns.preview.js', ['assets/js/jquery.js', 'assets/js/patterns.js']);
+'amteich.patterns.preview.js', ['assets/js/jquery.js', 'assets/js/patterns.js']);
 ```
 
 
@@ -295,7 +295,7 @@ The dark default theme might not be for everyone, but it's very easy to load you
 
 - Kirby 3.0.0+
 - PHP 7.1+
-- Kirby-Twig Plugin - <https://github.com/mgfagency/kirby-twig>
+- Kirby-Twig Plugin - <https://github.com/amteich/kirby-twig>
 
 ## License 
 
@@ -312,8 +312,8 @@ Bastian Allgeier
 
 ### Kirby 3 compatibility
 Steffen Wargalla   
-<sw@mgfagency.de>  
+<sw@crealistiques.de>  
 
 ### Twig compatibility
 Christian Zehetner
-<https://mgf.at>
+<https://am-teich.com>

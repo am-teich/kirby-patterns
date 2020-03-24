@@ -1,7 +1,7 @@
 {
-    "name": "mgfagency/kirby-patterns",
+    "name": "amteich/kirby-patterns",
     "type": "kirby-plugin",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "license": "MIT",
     "description": "Kirby 3 Patterns Plugin",
     "authors": [
@@ -11,11 +11,11 @@
         },
         {
             "name": "Steffen Wargalla",
-            "email": "sw@mgfagency.de"
+            "email": "sw@crealistiques.de"
         },
         {
             "name": "Christian Zehetner",
-            "email": "christian@mgf.at"
+            "email": "christian@am-teich.com"
         }
     ],
     "keywords": [

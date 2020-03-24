@@ -6,7 +6,7 @@ use Kirby\Patterns\Lab;
 @require_once(__DIR__ . '/src/helpers.php');
 
 
-Kirby::plugin('mgfagency/patterns', [
+Kirby::plugin('amteich/patterns', [
   'options' => [
     'enable' => true,
     'lock' => true,
@@ -22,6 +22,6 @@ Kirby::plugin('mgfagency/patterns', [
   ],
   'routes' => function() { return Lab::routes(); },
   'twigcomponents' => function () {
-    return option('mgfagency.patterns.directory');
+    return option('amteich.patterns.directory');
   },
 ]);

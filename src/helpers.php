@@ -3,7 +3,7 @@
 function pattern($path, $data = [], $return = true) {
   
   $output = null;
-  foreach (option('mgfagency.patterns.includepaths', []) as $subpath) {
+  foreach (option('amteich.patterns.includepaths', []) as $subpath) {
     $pattern = new Kirby\Patterns\Pattern($subpath . '/' . $path, $data);
     if ($pattern->exists()) {
       $output = $pattern;

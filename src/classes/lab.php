@@ -30,9 +30,9 @@ class Lab
     public function __construct()
     {
         $this->kirby = kirby();
-        $this->path = option('mgfagency.patterns.path', 'patterns');
-        $this->title = option('mgfagency.patterns.title', 'Patterns');
-        $this->root = option('mgfagency.patterns.directory', $this->kirby->roots()->site() . '/patterns');
+        $this->path = option('amteich.patterns.path', 'patterns');
+        $this->title = option('amteich.patterns.title', 'Patterns');
+        $this->root = option('amteich.patterns.directory', $this->kirby->roots()->site() . '/patterns');
 
         $lab = $this;
         static::$instance = $this;
@@ -95,8 +95,8 @@ class Lab
 
     public function run($path = '/')
     {
-        if (option('mgfagency.patterns.lock') && !$this->kirby->user()) {
-            go(option('mgfagency.patterns.error'));
+        if (option('amteich.patterns.lock') && !$this->kirby->user()) {
+            go(option('amteich.patterns.error'));
         }
 
         $router = new Router([
@@ -174,9 +174,9 @@ class Lab
                           'pattern' => $pattern,
                           'html' => $html,
                           'bodyattributes' => $pattern->bodyattributes(),
-                          'background' => a::get($config, 'background', option('mgfagency.patterns.preview.background')),
-                          'css' => option('mgfagency.patterns.preview.css'),
-                          'js' => option('mgfagency.patterns.preview.js')
+                          'background' => a::get($config, 'background', option('amteich.patterns.preview.background')),
+                          'css' => option('amteich.patterns.preview.css'),
+                          'js' => option('amteich.patterns.preview.js')
                       ]);
                     }
 
@@ -314,7 +314,7 @@ class Lab
             $snippet = 'html';
 
             // pass the mode to the template
-            $data['view'] = in_array(get('view'), $views) ? get('view') : option('mgfagency.patterns.preview.mode', 'preview');
+            $data['view'] = in_array(get('view'), $views) ? get('view') : option('amteich.patterns.preview.mode', 'preview');
 
             switch ($data['view']) {
                 case 'preview':
