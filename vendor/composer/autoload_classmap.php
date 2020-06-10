@@ -11,6 +11,6 @@ return array(
     'Kirby\\ComposerInstaller\\Installer' => $vendorDir . '/getkirby/composer-installer/src/ComposerInstaller/Installer.php',
     'Kirby\\ComposerInstaller\\Plugin' => $vendorDir . '/getkirby/composer-installer/src/ComposerInstaller/Plugin.php',
     'Kirby\\ComposerInstaller\\PluginInstaller' => $vendorDir . '/getkirby/composer-installer/src/ComposerInstaller/PluginInstaller.php',
-    'Kirby\\Patterns\\Lab' => $baseDir . '/src/classes/lab.php',
-    'Kirby\\Patterns\\Pattern' => $baseDir . '/src/classes/pattern.php',
+    'amteich\\Patterns\\Lab' => $baseDir . '/src/classes/lab.php',
+    'amteich\\Patterns\\Pattern' => $baseDir . '/src/classes/pattern.php',
 );

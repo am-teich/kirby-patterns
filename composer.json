@@ -31,7 +31,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Kirby\\Patterns\\": "src/classes/"
+            "amteich\\Patterns\\": "src/classes/"
         }
     },
     "config": {

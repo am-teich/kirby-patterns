@@ -7,15 +7,18 @@ namespace Composer\Autoload;
 class ComposerStaticInitffe8a21ff6125260270ace5becf599bd
 {
     public static $prefixLengthsPsr4 = array (
+        'a' => 
+        array (
+            'amteich\\Patterns\\' => 17,
+        ),
         'K' => 
         array (
-            'Kirby\\Patterns\\' => 15,
             'Kirby\\' => 6,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Kirby\\Patterns\\' => 
+        'amteich\\Patterns\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/classes',
         ),
@@ -31,8 +34,8 @@ class ComposerStaticInitffe8a21ff6125260270ace5becf599bd
         'Kirby\\ComposerInstaller\\Installer' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/Installer.php',
         'Kirby\\ComposerInstaller\\Plugin' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/Plugin.php',
         'Kirby\\ComposerInstaller\\PluginInstaller' => __DIR__ . '/..' . '/getkirby/composer-installer/src/ComposerInstaller/PluginInstaller.php',
-        'Kirby\\Patterns\\Lab' => __DIR__ . '/../..' . '/src/classes/lab.php',
-        'Kirby\\Patterns\\Pattern' => __DIR__ . '/../..' . '/src/classes/pattern.php',
+        'amteich\\Patterns\\Lab' => __DIR__ . '/../..' . '/src/classes/lab.php',
+        'amteich\\Patterns\\Pattern' => __DIR__ . '/../..' . '/src/classes/pattern.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -1,6 +1,6 @@
 <?php
 
-namespace Kirby\Patterns;
+namespace amteich\Patterns;
 
 use Kirby\Cms\Asset;
 use Kirby\Cms\Media;
