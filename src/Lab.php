@@ -173,6 +173,8 @@ class Lab
                       return Lab::instance()->view('views/preview', [
                           'pattern' => $pattern,
                           'html' => $html,
+                          'head' => $pattern->head(),
+                          'script' => $pattern->script(),
                           'bodyattributes' => $pattern->bodyattributes(),
                           'background' => a::get($config, 'background', option('amteich.patterns.preview.background')),
                           'css' => option('amteich.patterns.preview.css'),

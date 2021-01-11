@@ -13,6 +13,16 @@
     }
   </style>
   <?php endif ?>
+  
+  <?php if($script): ?>
+  <script>
+    <?= $script ?>
+  </script>
+  <?php endif ?>
+
+  <?php if($head): ?>
+  <?= $head ?>
+  <?php endif ?>
 </head>
 <body <?= Html::attr($bodyattributes) ?>>
   <?= $html ?>

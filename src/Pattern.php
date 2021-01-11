@@ -87,6 +87,16 @@ class Pattern
         return a::get($this->config(), 'bodyattributes', []);
     }
 
+    public function script()
+    {
+        return a::get($this->config(), 'script', []);
+    }
+
+    public function head()
+    {
+        return a::get($this->config(), 'head', []);
+    }
+
     public function data()
     {
 
