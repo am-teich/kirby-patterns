@@ -1,4 +1,4 @@
-# Patterns Plugin for Kirby 3 with Twig Plugin
+# Patterns Plugin for Kirby 3 with Twig Plugin (> v4.0.0)
 
 This is a forked and updated version of the Kirby 3 Patterns Plugin of Steffen Wargalla.
 

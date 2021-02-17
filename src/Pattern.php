@@ -130,7 +130,7 @@ class Pattern
 
     public function template()
     {
-        return \mgfagency\Twig\Plugin::render($this->relativeFile('twig'), $this->data());
+        return \amteich\Twig\Plugin::render($this->relativeFile('twig'), $this->data());
         // return tpl::load($this->file('html.php'), $this->data());
     }
 
