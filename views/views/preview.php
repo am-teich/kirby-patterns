@@ -26,6 +26,12 @@
 </head>
 <body <?= Html::attr($bodyattributes) ?>>
   <?= $html ?>
-  <?= Bnomei\Fingerprint::js($js) ?>
+  <?php if (is_array($js)): ?>
+    <?php foreach ($js as $item): ?>
+      <?= Bnomei\Fingerprint::js($item) ?>
+    <?php endforeach ?>
+  <?php else: ?>
+    <?= Bnomei\Fingerprint::js($js) ?>
+  <?php endif ?>
 </body>
 </html>
