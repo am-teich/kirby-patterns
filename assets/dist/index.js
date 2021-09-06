@@ -429,10 +429,10 @@ Prism.languages.twig={comment:/\{#[\s\S]*?#\}/,tag:{pattern:/\{\{[\s\S]*?\}\}|\{
 		sizeSmall();
 	} else if(!isNaN(hash) && hash !== '') { //if screen size is a number
 		sizeiframe(parseInt(hash));
-		console.log('this is a number');
+		// console.log('this is a number');
 	} else {
 		sizeFull();
-		console.log('this is not a number');
+		// console.log('this is not a number');
 	}
 
 })(this);
